@@ -38,8 +38,8 @@
       <div class="col-md-6" ng-controller='ToBuyController as toBuy'>
         
         <h2>New item:</h2>
-        <input type="text" placeholder="New item" ng-model="newItem" ng-keyup="displayDescription();">
         <input type="number" placeholder="Quantity" ng-model="newQty">
+        <input type="text" placeholder="New item" ng-model="newItem" ng-keyup="displayDescription();">
         <button class="btn btn-default" ng-click="toBuy.addItem()">
           <span class="glyphicon glyphicon-ok"></span> Add Item
         </button>
