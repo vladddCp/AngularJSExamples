@@ -27,23 +27,31 @@
   </style>
 </head>
 
-<body  ng-app="ShoppingListCheckOff">
+<body ng-app="ShoppingListCheckOff">
   <div class="container">
     <h1>Shopping List Check Off</h1>
 
     <div class="row">
 
+
       <!-- To Buy List -->
       <div class="col-md-6" ng-controller='ToBuyController as toBuy'>
         
+        <h2>New item:</h2>
+        <input type="text" placeholder="New item" ng-model="newItem" ng-keyup="displayDescription();">
+        <input type="number" placeholder="Quantity" ng-model="newQty">
+        <button class="btn btn-default" ng-click="toBuy.addItem()">
+          <span class="glyphicon glyphicon-ok"></span> Add Item
+        </button>
+
         <h2>To Buy:</h2>
         <ul ng-repeat="item in toBuy.getItems()">
-          <li>{{item.qty}} {{item.name}} 
+          <li>{{item.qty}} {{item.name}}
             <button class="btn btn-default" ng-click="toBuy.buyItem(item)">
               <span class="glyphicon glyphicon-ok"></span> Bought
             </button>
           </li>
-         
+
         </ul>
         <div class="emptyMessage" ng-show="toBuy.isListEmpty()">Everything is bought!</div>
       </div>
