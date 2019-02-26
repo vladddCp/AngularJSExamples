@@ -10,9 +10,9 @@
         .directive('foundItems', FoundItems);
 
 
-    NarrowItDownController.$inject = ['$scope', 'MenuSearchService', '$filter'];
+    NarrowItDownController.$inject = ['MenuSearchService'];
 
-    function NarrowItDownController($scope, MenuSearchService, $filter) {
+    function NarrowItDownController(MenuSearchService) {
 
         var narrowed = this;
 
@@ -80,7 +80,7 @@
         var ddo = {
             templateUrl: 'foundItems.html'
         };
-        console.log('found items!');
+
         return ddo;
     }
 
@@ -88,7 +88,7 @@
         var ddo = {
             template: '{{ menuItem.name }}'
         };
-        console.log('found items desc!');
+
         return ddo;
     }
 
